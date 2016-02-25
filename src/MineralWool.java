@@ -1,20 +1,29 @@
 /**
  * Created by Benki on 18.02.2016.
  */
-public class MineralWool implements Warm {
+public class MineralWool extends Warm {
 
-    @Override
-    public double price() {
-        return 0;
+    final double quadratureMinWool = 0.6;
+
+
+    public MineralWool(int quadrature, int dopth, int density) {
+        super(quadrature, dopth, density);
+    }
+
+
+    public double price(double quadrature, int depth) {
+        double price =0;
+        if(depth==5)price = quadrature*320;
+        if(depth==100)price = quadrature*360;
+        return  price;
+
     }
 
     @Override
-    public int quantity() {
-        return 0;
-    }
+    public double quantity(double quadrature) {
 
-    @Override
-    public void buying() {
+        double quantity = quadrature * quadratureMinWool;
 
+        return quantity;
     }
 }
