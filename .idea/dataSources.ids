@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="3ff4225d-3d81-41e9-8ba3-1c523c8e09d4">
+    <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="mydbtest"/>
+    <table name="custоmer" schema="" catalog="mydbtest" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="quad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="number" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="warm" schema="" catalog="mydbtest" type="TABLE">
+      <column name="idwarm" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name_warm" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="density" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="depth" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price_few" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price_many" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idwarm"/>
+    </table>
+  </data-source>
+</component>
