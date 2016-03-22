@@ -1,3 +1,8 @@
+package Entity;
+
+import Entity.ExtrudedPolystyrene;
+import Entity.MineralWool;
+
 /**
  * Created by Benki on 12.03.2016.
  */

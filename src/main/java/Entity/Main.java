@@ -1,20 +1,43 @@
+package Entity;
+
+import Dao.CustomerDao;
+
+import general.Factory;
+import table.Customer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 
 
 /**
  * Created by Benki on 18.02.2016.
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name;
+        int number;
+
+        System.out.println("Введите ваше имя");
+         name =reader.readLine();
+        System.out.println();
+
+        System.out.println("и номер вашего телефона: ");
+        String num = reader.readLine();
+        number = Integer.parseInt(num);
+        System.out.println();
+
+
         System.out.println("Введите квадратуру");
         String quadr = reader.readLine();
         int quadrature = Integer.parseInt(quadr);
+        System.out.println();
 
 
-        //выщитываем стоимость
+       /* //выщитываем стоимость
         System.out.println("Какой, вы, хотите утеплитель");
         System.out.println("-если пенопласт то введите 1");
         System.out.println("-если пенополистирол введите 2");
@@ -58,9 +81,18 @@ public class Main {
         System.out.println(qm.putti() + " мешков шпаклевки");
         System.out.println(qm.qrid() + " квадратных метров сетки" );
         System.out.println(qm.paint() + " литров краски");
+*/
+        Factory factory = Factory.getInstance();
+        CustomerDao customerDao = factory.getCustomerDao();
 
+        Customer customer = new Customer();
+        customer.setName(name);
+        customer.setQuad(quadrature);
+        customer.setNumber(number);
 
-        }
+        customerDao.addCustomer(customer);
+
+    }
 
 
 }

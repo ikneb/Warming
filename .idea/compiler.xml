@@ -23,10 +23,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Warming" />
+        <module name="Hibernate" />
+        <module name="hibernate" />
+        <module name="Model" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="Hibernate" target="1.6" />
+      <module name="hibernate" target="1.6" />
+      <module name="Model" target="1.8" />
       <module name="Warming" target="1.8" />
     </bytecodeTargetLevel>
   </component>

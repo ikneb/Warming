@@ -1,3 +1,7 @@
+package Entity;
+
+import Entity.ConstructionMaterial;
+
 /**
  * Created by Benki on 18.02.2016.
  */
