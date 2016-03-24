@@ -3,7 +3,10 @@ package Entity;
 import Dao.CustomerDao;
 
 import general.Factory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import table.Customer;
+import util.HibernateUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -82,7 +85,7 @@ public class Main {
         System.out.println(qm.qrid() + " квадратных метров сетки" );
         System.out.println(qm.paint() + " литров краски");
 */
-        Factory factory = Factory.getInstance();
+              Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
 
         Customer customer = new Customer();
@@ -91,6 +94,13 @@ public class Main {
         customer.setNumber(number);
 
         customerDao.addCustomer(customer);
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("all_context");
+
+        customer = (Customer)context.getBean("customer");
+        System.out.println(customer);
+
+        HibernateUtil.close();
 
     }
 

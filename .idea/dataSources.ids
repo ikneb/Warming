@@ -9,10 +9,11 @@
     <schema name="" catalog="mydbtest"/>
     <table name="author" schema="" catalog="mydbtest" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="fierstName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="lastName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="midletName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="midlle_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FKbjqhp85wjv8vpr0beygh6jsgo" table="book_author" schema="" catalog="mydbtest" columns="author_id"/>
     </table>
     <table name="bdcustomer" schema="" catalog="mydbtest" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -42,6 +43,17 @@
       <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FKhwgu59n9o80xv75plf9ggj7xn" table="book_author" schema="" catalog="mydbtest" columns="book_id"/>
+    </table>
+    <table name="book_author" schema="" catalog="mydbtest" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="book_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="author_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FKbjqhp85wjv8vpr0beygh6jsgo" columns="author_id" ref-table="author" ref-schema="" ref-catalog="mydbtest" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FKhwgu59n9o80xv75plf9ggj7xn" columns="book_id" ref-table="book" ref-schema="" ref-catalog="mydbtest" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FKbjqhp85wjv8vpr0beygh6jsgo" unique="false" columns="author_id"/>
+      <index name="FKhwgu59n9o80xv75plf9ggj7xn" unique="false" columns="book_id"/>
     </table>
   </data-source>
 </component>

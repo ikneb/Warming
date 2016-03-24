@@ -8,9 +8,6 @@ public class ExtrudedPolystyrene extends Warm {
    static final double quadratureOnePolyst = 0.72;
 
 
-    public ExtrudedPolystyrene(int quadrature, int dopth, int density) {
-        super(quadrature, dopth, density);
-    }
 
 
     public double price(double quadrature,int depth) {

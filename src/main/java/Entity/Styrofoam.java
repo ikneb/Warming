@@ -6,10 +6,7 @@ package Entity;
 public class Styrofoam extends Warm {
 
     static final int quadratureOneStyrof = 1;
-
-    public Styrofoam(int quadrature, int dopth, int density) {
-        super(quadrature, dopth, density);
-    }
+    public int depth;
 
     public double price(double quadrature, int dopth, int density) {
         double price = 0;

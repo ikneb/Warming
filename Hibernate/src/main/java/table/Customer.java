@@ -19,6 +19,16 @@ public class Customer {
     @Column(name = "number")
     private int number;
 
+
+    public Customer(){
+
+    }
+    public Customer(String name,int quad,int number){
+        this.name = name;
+        this.quad = quad;
+        this.number = number;
+
+    }
     public int getId() {
         return id;
     }
@@ -51,3 +61,5 @@ public class Customer {
         this.number = number;
     }
 }
+
+

@@ -14,7 +14,7 @@
 
 
     <properties>
-        <string-version>4.2.5.RELEASE</string-version>
+        <spring-framework.version>4.2.5.RELEASE</spring-framework.version>
         <java-version>1.8</java-version>
     </properties>
 
@@ -22,32 +22,21 @@
 
 
     <dependencies>
-<!--spring-->
+
+        <!-- Spring and Transactions -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${string-version}</version>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-framework.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${string-version}</version>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-framework.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${string-version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${string-version}</version>
-        </dependency>
-
-<!--Hibernate-->
+        <!--Hibernate-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -82,6 +71,18 @@
             <groupId>uz.benki</groupId>
             <artifactId>hibernate</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.3.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>2.2.4</version>
         </dependency>
 
 
