@@ -14,12 +14,13 @@ import java.io.PrintWriter;
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static String name;
-	public static String email;
+//	public static String email;
 	public static int number;
 	public static int quad;
 	public static int thick;
 	public static String material;
 	public static String call;
+	public static int density;
 
 
 
@@ -28,22 +29,23 @@ public class MyServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		 name = request.getParameter("name");
-//		String email = request.getParameter("email");
+//	    email = request.getParameter("email");
 		 number = Integer.parseInt(request.getParameter("number"));
 		 quad = Integer.parseInt(request.getParameter("quad"));
-//		int thick = Integer.parseInt(request.getParameter("thick"));
-//		String material = request.getParameter("gridRadios");
-//		String call = request.getParameter("call");
+		thick = Integer.parseInt(request.getParameter("thick"));
+		 material = request.getParameter("gridRadios");
+		call = request.getParameter("call");
+		density = Integer.parseInt(request.getParameter("density"));
 
-		System.out.println(name + " " + number + " " + quad );
-		Main main = new Main();
-		main.recordDB();
+
+
+		Main.recordDB();
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
 		PrintWriter out = response.getWriter();
-		out.println();
+		out.println(Main.calkPrice());
 		out.close();
 	}
 

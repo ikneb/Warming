@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap Template</title>
+    <title>Калькулятор утепления</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                     </button>
                     
                   
-            <a class="navbar-brand" href="#bottom">Calculator</a>
+            <a class="navbar-brand" href="#bottom">Калькулятор</a>
                     
                     
                   </div>
@@ -110,7 +110,7 @@
           
       <div class="container">
           <div class="row">
-          <h1>Warming</h1>
+          <h1>Качественное утепление квартир</h1>
           </div>
       </div>
           
@@ -120,70 +120,76 @@
       <form action="MyServlet" method="post">
           
   <div class="form-group">
-    <label for="exampleInputName2">Name</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="name">
+    <label for="exampleInputName2">Ваше имя</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Василий" name="name">
   </div>
-  <div class="form-group row">
+ <!--&lt;!&ndash; <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
     <div class="col-sm-10">
       <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
-    </div>
-  </div>
+    </div>&ndash;&gt;
+  </div>-->
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 form-control-label">Number phone</label>
+    <label for="inputPassword3" class="col-sm-2 form-control-label">Номер телефона</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputPassword3" placeholder="Number phone" name="number">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="0500409599" name="number">
     </div>
   </div>
   <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 form-control-label">Quadrature</label>
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Ваша квадратура</label>
       <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputPassword3" placeholder="Quadrature" name="quad">
-      </div>
-  </div>
-  <!--<div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 form-control-label">Material thicknes</label>
-      <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputPassword3" placeholder="Material thicknes" name="thick">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="60" name="quad">
       </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2">Material</label>
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Толщина утеплителя</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="3,5 или 10см " name="thick">
+      </div>
+  </div>
+          <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 form-control-label">Плотность утеплителя</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="если пенопласт 25 или 35" name="density">
+              </div>
+          </div>
+  <div class="form-group row">
+    <label class="col-sm-2">Выберите материал</label>
     <div class="col-sm-10">
       <div class="radio">
         <label>
           <input type="radio" name="gridRadios" id="gridRadios1" value="styrofoam" checked>
-          Styrofoam
+          Пенопласт
         </label>
       </div>
       <div class="radio">
         <label>
-          <input type="radio" name="gridRadios" id="gridRadios2" value="expanded polystyrene">
-          Expanded polystyrene
+          <input type="radio" name="gridRadios" id="gridRadios2" value="expanded_polystyrene">
+          Пенополистирол
         </label>
       </div>
         <div class="radio">
         <label>
-          <input type="radio" name="gridRadios" id="gridRadios2" value="mineral wool" >
-          Mineral wool
+          <input type="radio" name="gridRadios" id="gridRadios2" value="mineral_wool" >
+          Минеральная вата
         </label>
       </div>
       
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-2">Сall me back</label>
+    <label class="col-sm-2">Перезвоните мне</label>
     <div class="col-sm-10">
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="call"> Necessarily
+          <input type="checkbox" name="call"> Обязательно)
         </label>
       </div>
     </div>
-  </div>-->
+  </div>
   <div class="form-group row">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Сompute</button>
+      <button type="submit" class="btn btn-secondary">Посчитать</button>
     </div>
   </div>
 </form>

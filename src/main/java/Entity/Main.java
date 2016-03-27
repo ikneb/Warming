@@ -3,8 +3,7 @@ package Entity;
 import Dao.CustomerDao;
 
 import general.Factory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import table.Customer;
 import unlimit.MyServlet;
 import util.HibernateUtil;
@@ -25,52 +24,7 @@ public class Main {
         String name;
         int number;
 
-        System.out.println("Введите ваше имя");
-         name =reader.readLine();
-        System.out.println();
 
-        System.out.println("и номер вашего телефона: ");
-        String num = reader.readLine();
-        number = Integer.parseInt(num);
-        System.out.println();
-
-
-        System.out.println("Введите квадратуру");
-        String quadr = reader.readLine();
-        int quadrature = Integer.parseInt(quadr);
-        System.out.println();*//*
-
-
-       *//* //выщитываем стоимость
-        System.out.println("Какой, вы, хотите утеплитель");
-        System.out.println("-если пенопласт то введите 1");
-        System.out.println("-если пенополистирол введите 2");
-        System.out.println("-если минеральная вата 3");
-        String heat = reader.readLine();
-        int heater = Integer.parseInt(heat);
-
-        if (heater == 1) {
-            System.out.println("плотность 25 или 35:");
-            String den = reader.readLine();
-            int density = Integer.parseInt(den);                           //плотность
-            System.out.println("и толщину утеплителя(5 или 10см): ");
-            String dep = reader.readLine();                                 //толщина утеплителя
-            int depth = Integer.parseInt(dep);
-            Styrofoam styrofoam = new Styrofoam(quadrature,depth,density);
-            System.out.println("Цена утепления: " + styrofoam.price(quadrature,depth,density));
-        } else if (heater == 2){
-            System.out.println("Выбирайте толщину утеплителя(3 или 5см): ");
-            String dep = reader.readLine();
-            int depth = Integer.parseInt(dep);                      //толщина утеплителя
-            ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene(quadrature,depth,0);
-            System.out.println("Цена утепления: " + extrudedPolystyrene.price(quadrature,depth));
-        }else if(heater == 3){
-            System.out.println("Выбирайте толщину утеплителя(5 или 10см): ");
-            String dep = reader.readLine();
-            int depth = Integer.parseInt(dep);                      //толщина утеплителя
-            MineralWool mineralWool = new MineralWool(quadrature,depth,130);
-            System.out.println("Цена утепления: " + mineralWool.price(quadrature,depth));
-        }
         System.out.println();
 
 
@@ -88,8 +42,9 @@ public class Main {
 */
 
 
-    public void recordDB(){
-              Factory factory = Factory.getInstance();
+    public static  void recordDB(){
+
+        Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
 
         Customer customer = new Customer();
@@ -97,6 +52,8 @@ public class Main {
         customer.setQuad(MyServlet.quad);
         customer.setNumber(MyServlet.number);
 
+
+        //add in data base
         try {
             customerDao.addCustomer(customer);
         } catch (SQLException e) {
@@ -108,9 +65,57 @@ public class Main {
         customer = (Customer)context.getBean("customer");
         System.out.println(customer);*/
 
+
+        //close SessionFactory
         HibernateUtil.close();
 
     }
+    public static  double calkPrice(){
+        String name;
+        String thick;
+        int number;
+        int depth;
+        int quadrature;
+        double result = 0;
 
+
+
+
+         //выщитываем стоимость
+        System.out.println("Какой, вы, хотите утеплитель");
+        System.out.println("-если пенопласт то введите 1");
+        System.out.println("-если пенополистирол введите 2");
+        System.out.println("-если минеральная вата 3");
+
+        thick = MyServlet.material;
+
+        if (thick.equals("styrofoam")) {
+
+            int density = MyServlet.density;                           //плотность
+             depth = MyServlet.thick;
+            quadrature = MyServlet.quad;
+
+            Styrofoam styrofoam = new Styrofoam();
+             result=styrofoam.price(quadrature, depth, density);
+
+
+        } else if (thick.equals("expanded_polystyrene")){
+            depth = MyServlet.thick;
+            quadrature = MyServlet.quad;
+            ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
+           result = extrudedPolystyrene.price(quadrature,depth);
+
+        }else if(thick.equals("mineral_wool")){
+
+            depth = MyServlet.thick;
+            quadrature = MyServlet.quad;
+
+            MineralWool mineralWool = new MineralWool();
+            result = mineralWool.price(quadrature,depth);
+        }
+
+        return result;
+
+    }
 
 }

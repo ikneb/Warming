@@ -6,7 +6,7 @@ package Entity;
 public class MineralWool extends Warm {
 
     static final double quadratureMinWool = 0.6;
-    public int depth;
+
 
 
 

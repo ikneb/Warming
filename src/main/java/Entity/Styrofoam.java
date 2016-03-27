@@ -6,9 +6,12 @@ package Entity;
 public class Styrofoam extends Warm {
 
     static final int quadratureOneStyrof = 1;
-    public int depth;
 
-    public double price(double quadrature, int dopth, int density) {
+
+
+
+
+    public double price(double quadrature, int depth, int density) {
         double price = 0;
 
         if (density == 25) {
