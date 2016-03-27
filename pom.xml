@@ -67,11 +67,7 @@
             <version>5.1.38</version>
         </dependency>
 
-        <dependency>
-            <groupId>uz.benki</groupId>
-            <artifactId>hibernate</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.jboss.logging</groupId>

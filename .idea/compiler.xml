@@ -29,7 +29,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="hibernate" target="1.8" />
+      <module name="Hibernate" target="1.6" />
+      <module name="hibernate" target="1.6" />
       <module name="Warming" target="1.8" />
     </bytecodeTargetLevel>
   </component>

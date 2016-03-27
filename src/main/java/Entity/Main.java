@@ -6,11 +6,10 @@ import general.Factory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import table.Customer;
+import unlimit.MyServlet;
 import util.HibernateUtil;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.sql.SQLException;
 
 
@@ -18,9 +17,11 @@ import java.sql.SQLException;
  * Created by Benki on 18.02.2016.
  */
 public class Main {
-    public static void main(String[] args) throws IOException, SQLException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+   /* public static void main(String[] args) throws IOException, SQLException {
+
+       *//* BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String name;
         int number;
 
@@ -37,10 +38,10 @@ public class Main {
         System.out.println("Введите квадратуру");
         String quadr = reader.readLine();
         int quadrature = Integer.parseInt(quadr);
-        System.out.println();
+        System.out.println();*//*
 
 
-       /* //выщитываем стоимость
+       *//* //выщитываем стоимость
         System.out.println("Какой, вы, хотите утеплитель");
         System.out.println("-если пенопласт то введите 1");
         System.out.println("-если пенополистирол введите 2");
@@ -85,20 +86,27 @@ public class Main {
         System.out.println(qm.qrid() + " квадратных метров сетки" );
         System.out.println(qm.paint() + " литров краски");
 */
+
+
+    public void recordDB(){
               Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
 
         Customer customer = new Customer();
-        customer.setName(name);
-        customer.setQuad(quadrature);
-        customer.setNumber(number);
+        customer.setName(MyServlet.name);
+        customer.setQuad(MyServlet.quad);
+        customer.setNumber(MyServlet.number);
 
-        customerDao.addCustomer(customer);
+        try {
+            customerDao.addCustomer(customer);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("all_context");
+       /* ApplicationContext context = new ClassPathXmlApplicationContext("all_context");
 
         customer = (Customer)context.getBean("customer");
-        System.out.println(customer);
+        System.out.println(customer);*/
 
         HibernateUtil.close();
 
