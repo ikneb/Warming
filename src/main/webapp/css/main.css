@@ -9,7 +9,14 @@
 .thumb img:hover {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(1);
+
 }
 .thumb {
     padding:5px;
+}
+.container{
+    background-image: url('image/buckground.jpg');
+}
+.body{
+    background-image: url('image/buckground.jpg') ;
 }

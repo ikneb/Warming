@@ -1,6 +1,7 @@
 package unlimit;
 
 import Entity.Main;
+import org.json.simple.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 
 @WebServlet("/MyServlet")
 public class MyServlet extends HttpServlet {
@@ -25,7 +27,7 @@ public class MyServlet extends HttpServlet {
 
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		 name = request.getParameter("name");
@@ -38,14 +40,21 @@ public class MyServlet extends HttpServlet {
 		density = Integer.parseInt(request.getParameter("density"));
 
 
+		Main.recordDB();//record in BD
 
-		Main.recordDB();
+
+
+		JSONObject resultJson = new JSONObject();
+
+		resultJson.put("prise",Main.calkPrice()); //create json
+
+
+
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
-
 		PrintWriter out = response.getWriter();
-		out.println(Main.calkPrice());
+		out.println(resultJson);
 		out.close();
 	}
 

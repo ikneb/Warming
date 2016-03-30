@@ -17,6 +17,7 @@ import java.sql.SQLException;
  */
 public class Main {
 
+    double price;
 
    /* public static void main(String[] args) throws IOException, SQLException {
 
@@ -69,8 +70,11 @@ public class Main {
         //close SessionFactory
         HibernateUtil.close();
 
+
     }
-    public static  double calkPrice(){
+
+
+    public  static double calkPrice(){
         String name;
         String thick;
         int number;
@@ -81,11 +85,8 @@ public class Main {
 
 
 
+
          //выщитываем стоимость
-        System.out.println("Какой, вы, хотите утеплитель");
-        System.out.println("-если пенопласт то введите 1");
-        System.out.println("-если пенополистирол введите 2");
-        System.out.println("-если минеральная вата 3");
 
         thick = MyServlet.material;
 
@@ -113,6 +114,7 @@ public class Main {
             MineralWool mineralWool = new MineralWool();
             result = mineralWool.price(quadrature,depth);
         }
+
 
         return result;
 
