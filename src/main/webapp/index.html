@@ -1,249 +1,269 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
+
+<html >
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Калькулятор утепления</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
-    
-  </head>
-  <body>
-      <p><a name="top"></a></p>
-       <div class="navbar navbar-inverse navbar-static-top">
-              <div class="container">
-                <div class="navbar-header">
-                  
-                    
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                        <span class="sr-only">Open navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"> </span>
-                      
-                  
-                    </button>
-                    
-                  
-            <a class="navbar-brand" href="#bottom">Калькулятор</a>
-                    
-                    
-                  </div>
-               <div class="collapse navbar-collapse" id="responsive-menu">
-                  <!--  <ul class="nav navbar-nav">
-                      <li><a href="#">Item 1</a></li>
-                      <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Item 2<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Item 1</a></li>
-                                    <li><a href="#">Item 2</a></li>
-                                    <li><a href="#">Item 3</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Item 4</a></li>
-                          
-                                </ul>
-                      </li>
-                      <li><a href="#">Item 3</a></li>
-                      <li><a href="#">Item 4</a></li>
-                   
-                   </ul> -->
-                   
-                   
-                  </div>   
-              </div>
-          </div>
-      
-      <p><a name="top"></a></p>
-      <!--Slides-->
-      
-          <div id="carousel" class="carousel slide">
-          <!-- индикаиоры слайдов-->
-          <ol class="carousel-indicators">
-            <li class="active" data-target="#carousel" data-slide-to="0"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-          </ol>
-          <!--Сами слайды-->
-          <div class="carousel-inner">
-              
-              <div class="item active">
-                 <img src="image/slide1.jpg" alt=""/>
-                  <div class="carousel-caption">
-                    <h3>First slide</h3>
-                    <p>Description first slide</p>
-                  </div>
-              </div>
-              <div class="item">
-                 <img src="image/slide21.jpg" alt=""/>
-                  <div class="carousel-caption">
-                    <h3>Second slide</h3>
-                    <p>Description second slide</p>
-              </div>
-              </div>
-              <div class="item">
-                 <img src="image/slide3.jpg" alt=""/>
-                  <div class="carousel-caption">
-                    <h3>Third slide</h3>
-                    <p>Description third slide</p>
-              </div>
-                     
-            </div>
-          </div>
-          
-          <!--Стрелки переключения слайдов-->
-          <a href="#carousel" class="left carousel-control" data-slide="prev"> 
-              <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a href="#carousel" class="right carousel-control" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-      </div>
-      
-      
-      
-      <div class="s"  >
-          
-      <div class="container">
-          <div class="row">
-          <h1>Качественное утепление квартир</h1>
-          </div>
-      </div>
-          
-          <div class="col-md-8">
-          
-          
-      <form >
-          
-  <div class="form-group">
-    <label for="name">Ваше имя</label>
-    <input type="text" class="form-control" id="name" placeholder="Василий" name="name">
-  </div>
- <!--&lt;!&ndash; <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
-    </div>&ndash;&gt;
-  </div>-->
-  <div class="form-group row">
-    <label for="number" class="col-sm-2 form-control-label">Номер телефона</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="number" placeholder="0500409599" name="number">
-    </div>
-  </div>
-  <div class="form-group row">
-      <label for="quad" class="col-sm-2 form-control-label">Ваша квадратура</label>
-      <div class="col-sm-10">
-      <input type="text" class="form-control" id="quad" placeholder="60" name="quad">
-      </div>
-  </div>
-  <div class="form-group row">
-      <label for="thick" class="col-sm-2 form-control-label">Толщина утеплителя</label>
-      <div class="col-sm-10">
-      <input type="text" class="form-control" id="thick" placeholder="3,5 или 10см " name="thick">
-      </div>
-  </div>
-          <div class="form-group row">
-              <label for="density" class="col-sm-2 form-control-label">Плотность утеплителя</label>
-              <div class="col-sm-10">
-                  <input type="text" class="form-control" id="density" placeholder="если пенопласт 25 или 35" name="density">
-              </div>
-          </div>
-  <div class="form-group row">
-    <label class="col-sm-2">Выберите материал</label>
-    <div class="col-sm-10">
-      <div class="radio">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios1" value="styrofoam" checked>
-          Пенопласт
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios2" value="expanded_polystyrene">
-          Пенополистирол
-        </label>
-      </div>
-        <div class="radio">
-        <label>
-          <input type="radio" name="gridRadios" id="gridRadios3" value="mineral_wool" >
-          Минеральная вата
-        </label>
-      </div>
-      
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2">Перезвоните мне</label>
-    <div class="col-sm-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="call"> Обязательно)
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" class="btn btn-secondary">Посчитать</button>
-    </div>
-  </div>
-</form>
-          </div>
-          <div class="col-md-4"></div>
-      
-          </div>
-      
-     
-     
-      
-      
-      
-      
-      
-   
-      <p><a name="bottom"></a></p>
-      
-      <div class="container-fluid">
-        <div class="row">
-            <div class=" col-md-6">
-            </div>
-            <div class=" col-md-6"></div>                
-        </div>
-    
-      </div>
-      
-       <div class="navbar navbar-inverse navbar-static-buttom">
-              <div class="container">
-                <div class="navbar-header">
-                  
-                    
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                        <span class="sr-only">Open navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"> </span>
-                      
-                  
-                    </button>
-                    
-                  
-            <a class="navbar-brand" href="#top">Top</a>
-                    
-                    
-                  </div>
-             
-              </div>
-          </div>
-      
-      
+    <script type="text/javascript" src="js/matherial.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="jquery/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-  </body>
+
+</head>
+<body>
+
+
+
+
+<p><a name="top"></a></p>
+
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">Open navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"> </span>
+
+
+            </button>
+
+
+            <a class="navbar-brand" href="#bottom">Калькулятор</a>
+
+
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu">
+            <!--  <ul class="nav navbar-nav">
+                <li><a href="#">Item 1</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Item 2<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#">Item 1</a></li>
+                              <li><a href="#">Item 2</a></li>
+                              <li><a href="#">Item 3</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Item 4</a></li>
+
+                          </ul>
+                </li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+
+             </ul> -->
+
+
+        </div>
+    </div>
+</div>
+
+<p><a name="top"></a></p>
+<!--Slides-->
+
+<div id="carousel" class="carousel slide">
+    <!-- индикаиоры слайдов-->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+    <!--Сами слайды-->
+    <div class="carousel-inner">
+
+        <div class="item active">
+            <img src="image/slide1.jpg" alt=""/>
+
+            <div class="carousel-caption">
+                <h3>First slide</h3>
+
+                <p>Description first slide</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="image/slide21.jpg" alt=""/>
+
+            <div class="carousel-caption">
+                <h3>Second slide</h3>
+
+                <p>Description second slide</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="image/slide3.jpg" alt=""/>
+
+            <div class="carousel-caption">
+                <h3>Third slide</h3>
+
+                <p>Description third slide</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Стрелки переключения слайдов-->
+    <a href="#carousel" class="left carousel-control" data-slide="prev">
+        <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+    </a>
+    <a href="#carousel" class="right carousel-control" data-slide="next">
+        <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+    </a>
+</div>
+
+
+<div class="s">
+
+    <div class="container">
+        <div class="row">
+            <h1>Качественное утепление квартир</h1>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+
+        <form>
+
+            <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input required type="text" class="form-control" id="name" placeholder="Василий" name="name" >
+            </div>
+            <!--&lt;!&ndash; <div class="form-group row">
+               <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+               <div class="col-sm-10">
+                 <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
+               </div>&ndash;&gt;
+             </div>-->
+            <div class="form-group row">
+                <label for="number" class="col-sm-2 form-control-label">Номер телефона</label>
+
+                <div class="col-sm-10">
+                    <input  required type="text" class="form-control" id="number" placeholder="0500409599" name="number"  >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="quad" class="col-sm-2 form-control-label">Ваша квадратура</label>
+
+                <div class="col-sm-10">
+                    <input required type="text" class="form-control" id="quad" placeholder="60" name="quad" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="thick" class="col-sm-2 form-control-label">Толщина утеплителя</label>
+
+                <div class="col-sm-10">
+                    <input required type="text" class="form-control" id="thick" placeholder="3,5 или 10см " name="thick" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="density" class="col-sm-2 form-control-label">Плотность утеплителя</label>
+
+                <div class="col-sm-10">
+                    <input required type="text" class="form-control" id="density" placeholder="если пенопласт 25 или 35"
+                           name="density" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2">Выберите материал</label>
+
+                <div class="col-sm-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gridRadios" id="gridRadios" value="styrofoam" checked>
+                            Пенопласт
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gridRadios" id="gridRadios" value="expanded_polystyrene">
+                            Пенополистирол
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gridRadios" id="gridRadios" value="mineral_wool">
+                            Минеральная вата
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2">Перезвоните мне</label>
+
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="call"> Обязательно)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" onclick="calcPrice()" class="btn btn-secondary">Посчитать</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>
+
+
+<p><a name="bottom"></a></p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class=" col-md-6">
+        </div>
+        <div class=" col-md-6"></div>
+    </div>
+
+</div>
+
+<div class="navbar navbar-inverse navbar-static-buttom">
+    <div class="container">
+        <div class="navbar-header">
+
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">Open navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"> </span>
+
+
+            </button>
+
+
+            <a class="navbar-brand" href="#top">Top</a>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Вы влетите</h4>
+            </div>
+            <div class="modal-body" id="price">Текст уведомления</div>
+            <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+        </div>
+    </div>
+</div>
+
+
+</body>
 </html>

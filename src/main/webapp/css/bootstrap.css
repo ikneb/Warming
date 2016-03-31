@@ -6762,7 +6762,7 @@ button.close {
     margin:0px;
 	padding:0px;
 	height: 100%;
-	background-image:  url("image/buckground.jpg");
+	background-image:  url("../image/buckground.jpg");
 	background-attachment:fixed;
 	background-size: 100% 100%;
 }

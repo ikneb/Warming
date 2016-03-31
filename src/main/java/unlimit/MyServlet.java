@@ -39,15 +39,15 @@ public class MyServlet extends HttpServlet {
 		call = request.getParameter("call");
 		density = Integer.parseInt(request.getParameter("density"));
 
-
-		Main.recordDB();//record in BD
+		System.out.println(name +" " +number);
+//		Main.recordDB();//record in BD
 
 
 
 		JSONObject resultJson = new JSONObject();
 
-		resultJson.put("prise",Main.calkPrice()); //create json
-
+		resultJson.put("price",Main.calkPrice()); //create json
+		System.out.println(resultJson);
 
 
 

@@ -3,32 +3,54 @@
  */
 
 function calcPrice() {
-    var name = document.getElementById("name");
-    /*   var email = document.getElementById("email");*/
-    var number = document.getElementById("number");
-    var quad = document.getElementById("quad");
-    var thick = document.getElementById("thick");
-    /*    var gridRadios = document.getElementById("gridRadios");*/
-    var call = document.getElementById("call");
-    var density = document.getElementById("density");
-    console.log("ololo");
-    $.ajax({
-        type: 'GET',
-        url: '/',
-        dataType: "json",
-        data: {
-            name: name,
-            number: number,
-            quad: quad,
-            thick: thick,
-            call: call,
-            density: density
+    var name = document.getElementById("name").value;
+    /*   var email = document.getElementById("email").value;*/
+    var number = document.getElementById("number").value;
+    var quad = document.getElementById("quad").value;
+    var thick = document.getElementById("thick").value;
+    /*    var gridRadios = document.getElementById("gridRadios").value;*/
+    /*    var call = document.getElementById("call").value;*/
+    var density = document.getElementById("density").value;
+    var gridRadios = document.getElementById("gridRadios").value;
 
-        },
-        success: function (data) {
-            //тут будет чудо
-            console.log(data);
-        }
+    var sht;
+    var repl;
+
+
+    function respoajax(callback) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/MyServlet',
+            dataType: "json",
+            data: {
+                name: name,
+                number: number,
+                quad: quad,
+                thick: thick,
+                density: density,
+                gridRadios:gridRadios
+
+            },
+            success: function (data) {
+
+                sht=JSON.parse ( JSON.stringify(data) )
+                callback(data);
+                console.log(sht.price);
+
+
+
+            }
+
+        });
+
+    };
+    respoajax(function allhtml(){
+
+        $('#price').html(sht.price + 'грн');
+
+        $('#myModal').modal('show');
+
+
     });
-    console.log("ololo123");
-}
+
+};
