@@ -19,6 +19,16 @@ public class Customer {
     @Column(name = "number")
     private int number;
 
+    @Column(name = "thick")
+    private int thick;
+
+    @Column(name = "material")
+    private String material;
+
+    @Column(name = "density")
+    private int density;
+
+
 
     public Customer(){
 
@@ -27,8 +37,36 @@ public class Customer {
         this.name = name;
         this.quad = quad;
         this.number = number;
-
+        this.thick = thick;
+        this.material = material;
+        this.density = density;
     }
+
+
+    public int getThick() {
+        return thick;
+    }
+
+    public void setThick(int thick) {
+        this.thick = thick;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public int getDensity() {
+        return density;
+    }
+
+    public void setDensity(int density) {
+        this.density = density;
+    }
+
     public int getId() {
         return id;
     }

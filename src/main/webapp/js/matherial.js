@@ -8,13 +8,13 @@ function calcPrice() {
     var number = document.getElementById("number").value;
     var quad = document.getElementById("quad").value;
     var thick = document.getElementById("thick").value;
-    /*    var gridRadios = document.getElementById("gridRadios").value;*/
+
     /*    var call = document.getElementById("call").value;*/
     var density = document.getElementById("density").value;
     var gridRadios = document.getElementById("gridRadios").value;
 
     var sht;
-    var repl;
+
 
 
     function respoajax(callback) {
@@ -37,8 +37,6 @@ function calcPrice() {
                 callback(data);
                 console.log(sht.price);
 
-
-
             }
 
         });
@@ -52,5 +50,27 @@ function calcPrice() {
 
 
     });
+
+};
+
+
+
+function admin() {
+
+
+    var url = "/admin.html";
+    $(location).attr('href',url);
+    console.log("ok")
+
+       /* $('#admin').live("click", function() {
+
+            location.href = $(this).attr('data-href');
+            console.log("ok")
+
+        });
+*/
+
+
+
 
 };

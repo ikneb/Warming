@@ -14,48 +14,44 @@ import java.io.PrintWriter;
 
 @WebServlet("/MyServlet")
 public class MyServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	public static String name;
-//	public static String email;
-	public static int number;
-	public static int quad;
-	public static int thick;
-	public static String material;
-	public static String call;
-	public static int density;
+    private static final long serialVersionUID = 1L;
+    public static String name;
+    //	public static String email;
+    public static int number;
+    public static int quad;
+    public static int thick;
+    public static String material;
+    public static String call;
+    public static int density;
 
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		 name = request.getParameter("name");
+        name = request.getParameter("name");
 //	    email = request.getParameter("email");
-		 number = Integer.parseInt(request.getParameter("number"));
-		 quad = Integer.parseInt(request.getParameter("quad"));
-		thick = Integer.parseInt(request.getParameter("thick"));
-		 material = request.getParameter("gridRadios");
-		call = request.getParameter("call");
-		density = Integer.parseInt(request.getParameter("density"));
+        number = Integer.parseInt(request.getParameter("number"));
+        quad = Integer.parseInt(request.getParameter("quad"));
+        thick = Integer.parseInt(request.getParameter("thick"));
+        material = request.getParameter("gridRadios");
+        call = request.getParameter("call");
+        density = Integer.parseInt(request.getParameter("density"));
 
-		System.out.println(name +" " +number);
-//		Main.recordDB();//record in BD
-
-
-
-		JSONObject resultJson = new JSONObject();
-
-		resultJson.put("price",Main.calkPrice()); //create json
-		System.out.println(resultJson);
+        System.out.println(name + " " + number);
+        Main.recordDB();
 
 
+        JSONObject resultJson = new JSONObject();
 
-		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println(resultJson);
-		out.close();
-	}
+        resultJson.put("price", Main.calkPrice()); //create json
+        System.out.println(resultJson);
+
+
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println(resultJson);
+        out.close();
+    }
 
 }

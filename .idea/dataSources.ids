@@ -20,13 +20,9 @@
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="quad" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="number" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="id"/>
-    </table>
-    <table name="bdcustоmer" schema="" catalog="mydbtest" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <column name="quad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="number" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="thick" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="material" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="density" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="bdwarm" schema="" catalog="mydbtest" type="TABLE">

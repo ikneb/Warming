@@ -2,49 +2,44 @@ package Entity;
 
 
 public class QuantityMaterial {
-    int warm;
-    int quadrature;
-    static double quantity;
-    int glue;
-    int putti;
-    int grid;
-    int paint;
+   public String material;
+    public int quadrature;
+    public static double quantity;
 
-    QuantityMaterial(int warm, int quadrature) {
-        this.warm = warm;
-        this.quadrature = quadrature;
-    }
+
+
 
     //количество утеплителя
-    public int quantityWarm() {
+    public static int warmQuantity(String material, int quadrature) {
 
-        if (warm == 1) {                         //пенопласт
+        if (material == "styrofoam") {                         //пенопласт
             quantity = quadrature;
-        } else if (warm == 2) {                     //пенополистирол
+        } else if (material == "expanded_polystyrene") {                     //пенополистирол
 
             quantity = (quadrature / ExtrudedPolystyrene.quadratureOnePolyst) + 1;
-        } else if (warm == 3) {                                             //вата
+        } else if (material == "mineral_wool") {                                             //вата
             quantity = (quadrature / MineralWool.quadratureMinWool) + 1;
 
         }
         return (int) quantity;
     }
 
-    public int glue() {          //клей
+    public static int glueQuantity(int quadrature) {          //клей
 
         return quadrature / 7;
     }
 
-    public int putti() {        //шпаклевка
+    public static int puttiQuantity(int quadrature) {        //шпаклевка
         return quadrature / 7;
     }
 
-    public int qrid(){          //сетка
+    public static int qridQuantity(int quadrature){          //сетка
         return quadrature;
     }
 
-    public  int paint(){
+    public static int paintQuantity(int quadrature){
         return quadrature/4;
     }
 
 }
+

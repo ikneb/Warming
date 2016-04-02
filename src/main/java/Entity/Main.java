@@ -19,31 +19,21 @@ public class Main {
 
     double price;
 
-   /* public static void main(String[] args) throws IOException, SQLException {
 
-       *//* BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String name;
-        int number;
+    public static void recordDB() {
 
+        int warmQuantity;
+        int glueQuantity;
+        int puttiQuantity;
+        int gridQuantity;
+        int paintQuantity;
 
-        System.out.println();
+        warmQuantity = QuantityMaterial.warmQuantity(MyServlet.material, MyServlet.quad);
+        glueQuantity = QuantityMaterial.glueQuantity(MyServlet.quad);
+        puttiQuantity = QuantityMaterial.puttiQuantity(MyServlet.quad);
+        gridQuantity = QuantityMaterial.qridQuantity(MyServlet.quad);
+        paintQuantity = QuantityMaterial.paintQuantity(MyServlet.quad);
 
-
-
-        //вычисляем количество материалов
-
-        QuantityMaterial qm = new QuantityMaterial(heater,quadrature);
-
-        System.out.println("Для этой квадратуры понадобится: ");
-        System.out.println(qm.quantityWarm() + " листов утеплителя");
-        System.out.println(qm.glue() + " мешков клея");
-        System.out.println(qm.putti() + " мешков шпаклевки");
-        System.out.println(qm.qrid() + " квадратных метров сетки" );
-        System.out.println(qm.paint() + " литров краски");
-*/
-
-
-    public static  void recordDB(){
 
         Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
@@ -52,6 +42,9 @@ public class Main {
         customer.setName(MyServlet.name);
         customer.setQuad(MyServlet.quad);
         customer.setNumber(MyServlet.number);
+        customer.setThick(MyServlet.thick);
+        customer.setMaterial(MyServlet.material);
+        customer.setDensity(MyServlet.density);
 
 
         //add in data base
@@ -61,11 +54,6 @@ public class Main {
             e.printStackTrace();
         }
 
-       /* ApplicationContext context = new ClassPathXmlApplicationContext("all_context");
-
-        customer = (Customer)context.getBean("customer");
-        System.out.println(customer);*/
-
 
         //close SessionFactory
         HibernateUtil.close();
@@ -74,7 +62,7 @@ public class Main {
     }
 
 
-    public  static double calkPrice(){
+    public static double calkPrice() {
         String name;
         String thick;
         int number;
@@ -83,41 +71,38 @@ public class Main {
         double result = 0;
 
 
-
-
-
-         //выщитываем стоимость
+        //выщитываем стоимость
 
         thick = MyServlet.material;
 
         if (thick.equals("styrofoam")) {
 
             int density = MyServlet.density;                           //плотность
-             depth = MyServlet.thick;
+            depth = MyServlet.thick;
             quadrature = MyServlet.quad;
-
             Styrofoam styrofoam = new Styrofoam();
-             result=styrofoam.price(quadrature, depth, density);
+            result = styrofoam.price(quadrature, depth, density);
 
 
-        } else if (thick.equals("expanded_polystyrene")){
+        } else if (thick.equals("expanded_polystyrene")) {
             depth = MyServlet.thick;
             quadrature = MyServlet.quad;
             ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
-           result = extrudedPolystyrene.price(quadrature,depth);
+            result = extrudedPolystyrene.price(quadrature, depth);
 
-        }else if(thick.equals("mineral_wool")){
+        } else if (thick.equals("mineral_wool")) {
 
             depth = MyServlet.thick;
             quadrature = MyServlet.quad;
 
             MineralWool mineralWool = new MineralWool();
-            result = mineralWool.price(quadrature,depth);
+            result = mineralWool.price(quadrature, depth);
         }
 
 
         return result;
 
     }
+
 
 }
