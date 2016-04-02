@@ -55,6 +55,54 @@ function calcPrice() {
 
 
 
+
+function passwordClic() {
+    var password = document.getElementById("password").value;
+
+    var sht;
+
+    function respoajax(callback) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/MyServletPassword',
+            dataType: "json",
+            data: {
+                password: password
+
+
+            },
+            success: function (data) {
+
+                sht=JSON.parse ( JSON.stringify(data) )
+                callback(data);
+                console.log(sht.password);
+
+            }
+
+        });
+
+    };
+    respoajax(function allhtml(){
+
+       if(sht.password == "yes"){
+           var url = "/admin.html";
+           $(location).attr('href',url);
+           console.log("ok")
+       }else {
+
+           $('#myModal').modal('show');
+       }
+
+    });
+
+};
+
+
+
+
+
+
+/*
 function admin() {
 
 
@@ -62,15 +110,17 @@ function admin() {
     $(location).attr('href',url);
     console.log("ok")
 
-       /* $('#admin').live("click", function() {
+       */
+/* $('#admin').live("click", function() {
 
             location.href = $(this).attr('data-href');
             console.log("ok")
 
         });
-*/
+*//*
 
 
 
 
-};
+
+};*/
