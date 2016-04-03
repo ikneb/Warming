@@ -99,7 +99,7 @@
 								<label class="checkbox"><input type="checkbox"> Подписаться на рассылку</label>
 							</div>
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit" value="Отправить сообщение">
+								<button type="button" onclick="smska()" class="btn btn-default">Отправить сообщение</button>
 							</div>
 						</div>
 					</form>
@@ -208,6 +208,20 @@
 		</div>
 
 	</footer>
+
+
+	<!--modal result calcul-->
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+					<h4 class="modal-title">Спасибо!</h4>
+				</div>
+				<div class="modal-body" id="price">Спасибо</div>
+				<div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+			</div>
+		</div>
+	</div>
 		
 
 

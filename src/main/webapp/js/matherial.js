@@ -126,6 +126,34 @@ function allall() {
 };
 
 
+function smska() {
+    var sht;
+
+    function respoajax(callback) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/MyServletAll',
+            dataType: "json",
+            data: {name: name,
+                email: email,
+                sms: sms
+                },
+
+            success: function (data) {
+                sht = JSON.parse(JSON.stringify(data));
+                callback(data);
+                console.log("olo");
+            }
+        });
+    };
+    respoajax(function allhtml() {
+        $('#myModal').modal('show');
+    });
+
+};
+
+
+
 
 
 
