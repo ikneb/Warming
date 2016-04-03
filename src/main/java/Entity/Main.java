@@ -4,12 +4,15 @@ import Dao.CustomerDao;
 
 import general.Factory;
 
+import org.json.simple.JSONObject;
 import table.Customer;
 import unlimit.MyServlet;
 import util.HibernateUtil;
 
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -55,8 +58,8 @@ public class Main {
         }
 
 
-        //close SessionFactory
-        HibernateUtil.close();
+        /*//close SessionFactory
+        HibernateUtil.close();*/
 
 
     }
@@ -104,5 +107,38 @@ public class Main {
 
     }
 
+    public static JSONObject allall() {
 
-}
+        List<Customer> customers = new ArrayList<>();
+
+        JSONObject obj = new JSONObject();
+        JSONObject resultJson = new JSONObject();
+
+        Factory factory = Factory.getInstance();
+        CustomerDao customerDao = factory.getCustomerDao();
+
+        try {
+            customers = customerDao.getCustomer();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        for (Customer customer : customers) {
+            obj.put("name", customer.getName());
+            obj.put("number", customer.getNumber());
+            obj.put("quad", customer.getQuad());
+            obj.put("material", customer.getMaterial());
+            obj.put("density", customer.getDensity());
+            obj.put("thick", customer.getThick());
+
+            resultJson.put(customer.getId(), obj);
+
+        }
+
+
+
+        return resultJson;
+
+    }
+
+    }

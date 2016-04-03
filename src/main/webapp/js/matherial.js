@@ -98,29 +98,39 @@ function passwordClic() {
 };
 
 
+function allall() {
+    var sht;
 
+    function respoajax(callback) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/MyServletAll',
+            dataType: "json",
+            data: {},
 
-
-
-/*
-function admin() {
-
-
-    var url = "/admin.html";
-    $(location).attr('href',url);
-    console.log("ok")
-
-       */
-/* $('#admin').live("click", function() {
-
-            location.href = $(this).attr('data-href');
-            console.log("ok")
-
+            success: function (data) {
+                sht = JSON.parse(JSON.stringify(data))
+                callback(data);
+                console.log("olo");
+            }
         });
-*//*
+    };
+    respoajax(function allhtml() {
+
+        console.log("olo")
+
+    });
+
+};
 
 
 
 
 
-};*/
+
+
+
+
+
+
+

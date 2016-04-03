@@ -37,8 +37,7 @@ public class MyServlet extends HttpServlet {
         call = request.getParameter("call");
         density = Integer.parseInt(request.getParameter("density"));
 
-        System.out.println(name + " " + number);
-        Main.recordDB();
+
 
 
         JSONObject resultJson = new JSONObject();
@@ -52,6 +51,10 @@ public class MyServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(resultJson);
         out.close();
+
+        System.out.println(name + " " + number);
+        Main.recordDB();
+
     }
 
 }

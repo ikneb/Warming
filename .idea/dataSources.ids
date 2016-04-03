@@ -15,7 +15,7 @@
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FKbjqhp85wjv8vpr0beygh6jsgo" table="book_author" schema="" catalog="mydbtest" columns="author_id"/>
     </table>
-    <table name="bdcustomer" schema="" catalog="mydbtest" type="TABLE">
+    <table name="bdcustomers" schema="" catalog="mydbtest" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="quad" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
