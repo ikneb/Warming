@@ -130,7 +130,7 @@ public class Main {
             obj.put("density", customer.getDensity());
             obj.put("thick", customer.getThick());
 
-            resultJson.put((int)customer.getId(), obj);
+            resultJson.put("id"+customer.getId(), obj);
 
         }
 

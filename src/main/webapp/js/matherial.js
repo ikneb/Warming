@@ -109,7 +109,8 @@ function allall() {
             data: {},
 
             success: function (data) {
-                sht = JSON.parse(JSON.stringify(data))
+                sht = JSON.parse(JSON.stringify(data));
+
                 callback(data);
                 console.log("olo");
             }
@@ -117,7 +118,8 @@ function allall() {
     };
     respoajax(function allhtml() {
 
-        console.log();
+
+
 
     });
 
