@@ -19,6 +19,7 @@ public class MyServletAll extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Main main = new Main();
 
 
         System.out.println("ok");
@@ -27,7 +28,7 @@ public class MyServletAll extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        out.println(Main.allall());
+        out.println(main.allall());
         out.close();
 
     }

@@ -75,6 +75,6 @@ public class CustomerDaoImpl implements CustomerDao {
             if((session!= null)&&(session.isOpen()))session.close();
         }
 
-        return null;
+        return customers;
     }
 }

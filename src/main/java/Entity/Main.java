@@ -7,7 +7,7 @@ import general.Factory;
 import org.json.simple.JSONObject;
 import table.Customer;
 import unlimit.MyServlet;
-import util.HibernateUtil;
+
 
 
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public class Main {
     double price;
 
 
-    public static void recordDB() {
+    public  void recordDB() {
 
         int warmQuantity;
         int glueQuantity;
@@ -58,8 +58,7 @@ public class Main {
         }
 
 
-        /*//close SessionFactory
-        HibernateUtil.close();*/
+
 
 
     }
@@ -107,7 +106,7 @@ public class Main {
 
     }
 
-    public static JSONObject allall() {
+    public  JSONObject allall() {
 
         List<Customer> customers = new ArrayList<>();
 
@@ -131,9 +130,11 @@ public class Main {
             obj.put("density", customer.getDensity());
             obj.put("thick", customer.getThick());
 
-            resultJson.put(customer.getId(), obj);
+            resultJson.put((int)customer.getId(), obj);
 
         }
+
+        System.out.println(resultJson);
 
 
 

@@ -117,7 +117,7 @@ function allall() {
     };
     respoajax(function allhtml() {
 
-        console.log("olo")
+        console.log();
 
     });
 
