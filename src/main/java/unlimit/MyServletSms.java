@@ -1,5 +1,6 @@
 package unlimit;
 
+
 import Entity.Main;
 
 import javax.servlet.ServletException;
@@ -33,8 +34,10 @@ public class MyServletSms extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        out.println("ok");
+        out.println("{\"number\":\"ok\"}");
         out.close();
+
+        Main.sms();
 
 
 

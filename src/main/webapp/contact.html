@@ -24,7 +24,7 @@
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript" src="js/matherial.js"></script>
+	<script type="text/javascript" src="js/sms.js"></script>
 </head>
 
 <body>
@@ -80,19 +80,19 @@
 					<form>
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Имя" name="neme" >
+								<input required type="text" class="form-control" id="name" placeholder="Василий" name="name">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Email" name="email" >
+								<input type="email" class="form-control" id="email" placeholder="Email" name="email">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Номер телефона" name="number" >
+								<input  required type="text" class="form-control" id="number" placeholder="номер" name="number" >
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Напишите, Ваше, пожелание здесь ..." class="form-control" rows="9" name="sms" ></textarea>
+								<textarea placeholder="Напишите, Ваше, пожелание здесь ..." class="form-control" rows="9" id="sms"  name="sms"></textarea>
 							</div>
 						</div>
 						<br>
@@ -213,11 +213,11 @@
 
 
 	<!--modal result calcul-->
-	<div id="myModal" class="modal fade">
+	<div id="myM" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-					<h4 class="modal-title">Спасибо!</h4>
+					<h4 class="modal-title">Спасибо!Мы вас услышали))</h4>
 				</div>
 				<div class="modal-body" id="price">Спасибо</div>
 				<div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>

@@ -3,6 +3,7 @@ package Entity;
 import Dao.CustomerDao;
 import Dao.SmsDao;
 import general.Factory;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import table.Customer;
 import table.Sms;
@@ -17,7 +18,7 @@ public class Main {
 
     double price;
 
-    public  void recordDB() {
+    public void recordDB() {
         int warmQuantity;
         int glueQuantity;
         int puttiQuantity;
@@ -80,13 +81,18 @@ public class Main {
         return result;
     }
 
-    public  JSONObject allall() {
+    public JSONObject allall() {
         List<Customer> customers = new ArrayList<>();
-        JSONObject obj = new JSONObject();
         JSONObject resultJson = new JSONObject();
         Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
 
+        JSONArray names = new JSONArray();
+        JSONArray numbers = new JSONArray();
+        JSONArray quads = new JSONArray();
+        JSONArray thicks = new JSONArray();
+        JSONArray materials = new JSONArray();
+        JSONArray densities = new JSONArray();
         try {
             customers = customerDao.getCustomer();
         } catch (SQLException e) {
@@ -94,21 +100,36 @@ public class Main {
         }
 
         for (Customer customer : customers) {
-            obj.put("name", customer.getName());
-            obj.put("number", customer.getNumber());
-            obj.put("quad", customer.getQuad());
-            obj.put("material", customer.getMaterial());
-            obj.put("density", customer.getDensity());
-            obj.put("thick", customer.getThick());
-
-            resultJson.put("id"+customer.getId(), obj);
-
+            names.add(customer.getName());
         }
+        for (Customer customer : customers) {
+            numbers.add(customer.getNumber());
+        }
+        for (Customer customer : customers) {
+            quads.add(customer.getQuad());
+        }
+        for (Customer customer : customers) {
+            thicks.add(customer.getThick());
+        }
+        for (Customer customer : customers) {
+            materials.add(customer.getMaterial());
+        }
+        for (Customer customer : customers) {
+            densities.add(customer.getDensity());
+        }
+
+        resultJson.put("name",names);
+        resultJson.put("number",numbers);
+        resultJson.put("quad",quads);
+        resultJson.put("thick",thicks);
+        resultJson.put("material",materials);
+        resultJson.put("densities",densities);
+
         System.out.println(resultJson);
         return resultJson;
     }
 
-    public static void sms(){
+    public static void sms() {
         Factory factory = Factory.getInstance();
         SmsDao smsDao = factory.getSmsDao();
 
@@ -126,4 +147,4 @@ public class Main {
         }
     }
 
-    }
+}

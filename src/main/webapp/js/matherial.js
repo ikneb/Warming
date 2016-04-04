@@ -4,17 +4,12 @@
 
 function calcPrice() {
     var name = document.getElementById("name").value;
-    /*   var email = document.getElementById("email").value;*/
     var number = document.getElementById("number").value;
     var quad = document.getElementById("quad").value;
     var thick = document.getElementById("thick").value;
-
-    /*    var call = document.getElementById("call").value;*/
     var density = document.getElementById("density").value;
     var gridRadios = document.getElementById("gridRadios").value;
-
     var sht;
-
 
 
     function respoajax(callback) {
@@ -29,26 +24,17 @@ function calcPrice() {
                 thick: thick,
                 density: density,
                 gridRadios:gridRadios
-
             },
             success: function (data) {
-
                 sht=JSON.parse ( JSON.stringify(data) )
                 callback(data);
                 console.log(sht.price);
-
             }
-
         });
-
     };
     respoajax(function allhtml(){
-
         $('#price').html(sht.price + 'грн');
-
         $('#myModal').modal('show');
-
-
     });
 
 };
@@ -76,7 +62,6 @@ function passwordClic() {
                 sht=JSON.parse ( JSON.stringify(data) )
                 callback(data);
                 console.log(sht.password);
-
             }
 
         });
@@ -110,7 +95,6 @@ function allall() {
 
             success: function (data) {
                 sht = JSON.parse(JSON.stringify(data));
-
                 callback(data);
                 console.log("olo");
             }
@@ -118,7 +102,7 @@ function allall() {
     };
     respoajax(function allhtml() {
 
-
+        console.log("olo");
 
 
     });
@@ -126,8 +110,13 @@ function allall() {
 };
 
 
-function smska() {
+/*function smska() {
     var sht;
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var number = document.getElementById("number").value;
+    var sms = document.getElementById("sms").value;
 
     function respoajax(callback) {
         $.ajax({
@@ -136,9 +125,9 @@ function smska() {
             dataType: "json",
             data: {name: name,
                 email: email,
+                number: number,
                 sms: sms
                 },
-
             success: function (data) {
                 sht = JSON.parse(JSON.stringify(data));
                 callback(data);
@@ -150,7 +139,7 @@ function smska() {
         $('#myModal').modal('show');
     });
 
-};
+};*/
 
 
 

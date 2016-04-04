@@ -14,6 +14,7 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping resource="customer.hbm.xml"/>
+        <mapping resource="sms.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

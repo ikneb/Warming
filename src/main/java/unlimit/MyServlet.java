@@ -29,7 +29,6 @@ public class MyServlet extends HttpServlet {
             throws ServletException, IOException {
 
         name = request.getParameter("name");
-//	    email = request.getParameter("email");
         number = Integer.parseInt(request.getParameter("number"));
         quad = Integer.parseInt(request.getParameter("quad"));
         thick = Integer.parseInt(request.getParameter("thick"));
