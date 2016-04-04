@@ -118,12 +118,14 @@ public class Main {
             densities.add(customer.getDensity());
         }
 
+        resultJson.put("count",names.size());
         resultJson.put("name",names);
         resultJson.put("number",numbers);
         resultJson.put("quad",quads);
         resultJson.put("thick",thicks);
         resultJson.put("material",materials);
         resultJson.put("densities",densities);
+
 
         System.out.println(resultJson);
         return resultJson;

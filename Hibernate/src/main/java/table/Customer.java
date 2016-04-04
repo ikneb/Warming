@@ -28,12 +28,14 @@ public class Customer {
     @Column(name = "density")
     private int density;
 
+    @Column(name = "density")
+    private int price;
 
 
     public Customer(){
 
     }
-    public Customer(String name,int quad,int number){
+    public Customer(String name,int quad,int number,){
         this.name = name;
         this.quad = quad;
         this.number = number;
