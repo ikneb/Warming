@@ -29,6 +29,7 @@
 
     <!--Form calcul-->
     <script type="text/javascript" src="js/matherial.js"></script>
+    <script type="text/javascript" src="js/sms.js"></script>
 
 
 </head>
@@ -132,32 +133,34 @@
     </div> <!-- /row -->
 
     <div class="jumbotron top-space">
-        <div class="form-group">
-            <label for="name">Ваше имя</label>
-            <input required type="text" class="form-control" id="name" placeholder="Василий" name="name" >
-        </div>
-
-        <p class="text-right"><a class="btn btn-primary btn-large">Найти клиента по имени »</a></p>
-    </div>
-
-</div> <!-- /container -->
-
+    </div> <!-- /container -->
 <!-- container -->
-<div class="container">
-
-
-
+    <div class="container">
     <div class="row">
-
     </div>
-
     <div class="row">
-
     </div> <!-- /row -->
 
     <div class="jumbotron top-space">
 
-        <p class="text-right"><a class="btn btn-primary btn-large">Читать сообщение »</a></p>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Почта</th>
+                <th>Телефон</th>
+                <th>Сообщение</th>
+            </tr>
+            </thead>
+            <tbody id="bodySms">
+
+            </tbody>
+        </table>
+
+        <p class="text-right">
+            <button type="button" onclick="deleteSms()" class="btn btn-default">Удалить все сообщения »</button>
+            <button type="button" onclick="readSms()" class="btn btn-default">Читать все сообщения »</button>
+        </p>
     </div>
 
 </div> <!-- /container -->
@@ -261,13 +264,13 @@
 </footer>
 
 <!--modal result calcul-->
-<div id="myModal" class="modal fade">
+<div id="myDelete" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Вы влетите</h4>
+                <h4 class="modal-title">Удаление</h4>
             </div>
-            <div class="modal-body" id="price">Текст уведомления</div>
+            <div class="modal-body" id="price">Все сообщения были успешно удалены</div>
             <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
         </div>
     </div>

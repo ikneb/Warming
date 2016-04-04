@@ -19,7 +19,7 @@ public class Main {
     double price;
 
     public void recordDB() {
-        int warmQuantity;
+       /* int warmQuantity;
         int glueQuantity;
         int puttiQuantity;
         int gridQuantity;
@@ -29,7 +29,7 @@ public class Main {
         glueQuantity = QuantityMaterial.glueQuantity(MyServlet.quad);
         puttiQuantity = QuantityMaterial.puttiQuantity(MyServlet.quad);
         gridQuantity = QuantityMaterial.qridQuantity(MyServlet.quad);
-        paintQuantity = QuantityMaterial.paintQuantity(MyServlet.quad);
+        paintQuantity = QuantityMaterial.paintQuantity(MyServlet.quad);*/
 
         Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
@@ -41,6 +41,7 @@ public class Main {
         customer.setThick(MyServlet.thick);
         customer.setMaterial(MyServlet.material);
         customer.setDensity(MyServlet.density);
+        customer.setPrice((int) MyServlet.price);
 
         //add in data base
         try {
@@ -93,6 +94,8 @@ public class Main {
         JSONArray thicks = new JSONArray();
         JSONArray materials = new JSONArray();
         JSONArray densities = new JSONArray();
+        JSONArray prices = new JSONArray();
+
         try {
             customers = customerDao.getCustomer();
         } catch (SQLException e) {
@@ -118,6 +121,9 @@ public class Main {
             densities.add(customer.getDensity());
         }
 
+ for (Customer customer : customers) {
+            prices.add(customer.getPrice());
+        }
         resultJson.put("count",names.size());
         resultJson.put("name",names);
         resultJson.put("number",numbers);
@@ -125,7 +131,7 @@ public class Main {
         resultJson.put("thick",thicks);
         resultJson.put("material",materials);
         resultJson.put("densities",densities);
-
+        resultJson.put("price",prices);
 
         System.out.println(resultJson);
         return resultJson;
@@ -134,7 +140,6 @@ public class Main {
     public static void sms() {
         Factory factory = Factory.getInstance();
         SmsDao smsDao = factory.getSmsDao();
-
         Sms sms = new Sms();
         sms.setName(MyServletSms.name);
         sms.setEmail(MyServletSms.email);
@@ -149,4 +154,63 @@ public class Main {
         }
     }
 
+    public JSONObject read(){
+        List<Sms> smsAr = new ArrayList<>();
+        JSONObject resultJson = new JSONObject();
+        Factory factory = Factory.getInstance();
+        SmsDao smsDao = factory.getSmsDao();
+        JSONArray names = new JSONArray();
+        JSONArray numbers = new JSONArray();
+        JSONArray emails = new JSONArray();
+        JSONArray smses = new JSONArray();
+
+        try {
+            smsAr = smsDao.getSms();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        for (Sms s: smsAr) {
+            names.add(s.getName());
+        }
+        for (Sms s : smsAr) {
+            numbers.add(s.getNumber());
+        }
+        for (Sms s: smsAr) {
+            emails.add(s.getEmail());
+        }
+        for (Sms s : smsAr) {
+            smses.add(s.getSms());
+        }
+
+        resultJson.put("count",names.size());
+        resultJson.put("name",names);
+        resultJson.put("number",numbers);
+        resultJson.put("email",emails);
+        resultJson.put("sms",smses);
+
+        System.out.println(resultJson);
+        return resultJson;
+    }
+
+
+    public static void deleteAll() {
+        List<Sms> smsAr = new ArrayList<>();
+        Factory factory = Factory.getInstance();
+        SmsDao smsDao = factory.getSmsDao();
+
+        try {
+            smsAr = smsDao.getSms();//add all with bd
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        for (Sms s: smsAr){
+            try {
+                smsDao.deleteSms(s);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

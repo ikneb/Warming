@@ -1,6 +1,5 @@
 package unlimit;
 
-
 import Entity.Main;
 
 import javax.servlet.ServletException;
@@ -11,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/MyServletAll")
-public class MyServletAll extends HttpServlet {
+@WebServlet("/MyServletRead")
+public class MyServletRead extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,8 +24,10 @@ public class MyServletAll extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        out.println(main.allall());
+        out.println(main.read());
         out.close();
 
     }
+
+
 }

@@ -23,6 +23,7 @@
       <column name="thick" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="material" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="density" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="bdwarm" schema="" catalog="mydbtest" type="TABLE">

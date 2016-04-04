@@ -12,6 +12,7 @@
         <property name="thick" column="thick" type="java.lang.Integer"/>
         <property name="material" column="material" type="java.lang.String"/>
         <property name="density" column="density" type="java.lang.Integer"/>
+        <property name="price" column="price" type="java.lang.Integer"/>
 
 
     </class>

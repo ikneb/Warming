@@ -23,6 +23,7 @@ public class MyServlet extends HttpServlet {
     public static String material;
     public static String call;
     public static int density;
+    public static double price;
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,13 +38,11 @@ public class MyServlet extends HttpServlet {
         density = Integer.parseInt(request.getParameter("density"));
 
         Main main = new Main();
-
+        price = Main.calkPrice();
 
         JSONObject resultJson = new JSONObject();
 
-        resultJson.put("price", Main.calkPrice()); //create json
-        System.out.println(resultJson);
-
+        resultJson.put("price",price); //create json
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -51,7 +50,6 @@ public class MyServlet extends HttpServlet {
         out.println(resultJson);
         out.close();
 
-        System.out.println(name + " " + number);
         main.recordDB();
 
     }

@@ -94,15 +94,14 @@ function allall() {
             success: function (data) {
                 sht = JSON.parse(JSON.stringify(data));
                 callback(data);
-                console.log("olo");
+
             }
         });
     };
     respoajax(function allhtml() {
 
         for (var i = 0; i < sht.count; i++) {
-            var row ="<tr ><td>"+sht.name[i]+"</td><td>"+sht.number[i]+"</td><td>"+sht.quad[i]+"</td><td>" +sht.thick[i]+"</td><td>"+sht.material[i]+"</td><td>"+sht.densities[i]+"</td></tr>";
-            console.log(row);
+            var row ="<tr ><td>"+sht.name[i]+"</td><td>"+sht.number[i]+"</td><td>"+sht.quad[i]+"</td><td>" +sht.thick[i]+"</td><td>"+sht.material[i]+"</td><td>"+sht.densities[i]+"</td><td>"+sht.price[i]+"</td></tr>";
             $('#bodyTabl').append(row);
         }
 

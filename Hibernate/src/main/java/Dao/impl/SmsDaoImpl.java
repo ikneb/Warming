@@ -70,7 +70,7 @@ public class SmsDaoImpl implements SmsDao {
 
         try{
             session =HibernateUtil.getSessionFactory().openSession();
-            smses = session.createCriteria(Customer.class).list();
+            smses = session.createCriteria(Sms.class).list();
         }catch(Exception e){
             e.printStackTrace();
         }finally {
