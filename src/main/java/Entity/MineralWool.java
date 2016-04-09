@@ -14,7 +14,7 @@ public class MineralWool extends Warm {
     public double price(double quadrature, int depth) {
         double price =0;
         if(depth==5)price = quadrature*320;
-        if(depth==100)price = quadrature*360;
+        if(depth==10)price = quadrature*360;
         return  price;
 
     }
