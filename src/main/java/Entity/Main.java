@@ -61,23 +61,21 @@ public class Main {
 
         //выщитываем стоимость
         thick = MyServlet.material;
-
-        if (thick.equals("styrofoam")) {
-            int density = MyServlet.density;                           //плотность
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            Styrofoam styrofoam = new Styrofoam();
-            result = styrofoam.price(quadrature, depth, density);
-        } else if (thick.equals("expanded_polystyrene")) {
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
-            result = extrudedPolystyrene.price(quadrature, depth);
-        } else if (thick.equals("mineral_wool")) {
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            MineralWool mineralWool = new MineralWool();
-            result = mineralWool.price(quadrature, depth);
+        quadrature = MyServlet.quad;
+        depth = MyServlet.thick;
+        switch (thick) {
+            case "styrofoam":
+                Styrofoam styrofoam = new Styrofoam();
+                result = styrofoam.price(quadrature, depth, MyServlet.density);
+                break;
+            case "expanded_polystyrene":
+                ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
+                result = extrudedPolystyrene.price(quadrature, depth);
+                break;
+            case "mineral_wool":
+                MineralWool mineralWool = new MineralWool();
+                result = mineralWool.price(quadrature, depth);
+                break;
         }
         return result;
     }
@@ -104,34 +102,21 @@ public class Main {
 
         for (Customer customer : customers) {
             names.add(customer.getName());
-        }
-        for (Customer customer : customers) {
             numbers.add(customer.getNumber());
-        }
-        for (Customer customer : customers) {
             quads.add(customer.getQuad());
-        }
-        for (Customer customer : customers) {
             thicks.add(customer.getThick());
-        }
-        for (Customer customer : customers) {
             materials.add(customer.getMaterial());
-        }
-        for (Customer customer : customers) {
             densities.add(customer.getDensity());
-        }
-
- for (Customer customer : customers) {
             prices.add(customer.getPrice());
         }
-        resultJson.put("count",names.size());
-        resultJson.put("name",names);
-        resultJson.put("number",numbers);
-        resultJson.put("quad",quads);
-        resultJson.put("thick",thicks);
-        resultJson.put("material",materials);
-        resultJson.put("densities",densities);
-        resultJson.put("price",prices);
+        resultJson.put("count", names.size());
+        resultJson.put("name", names);
+        resultJson.put("number", numbers);
+        resultJson.put("quad", quads);
+        resultJson.put("thick", thicks);
+        resultJson.put("material", materials);
+        resultJson.put("densities", densities);
+        resultJson.put("price", prices);
 
         System.out.println(resultJson);
         return resultJson;
@@ -154,7 +139,7 @@ public class Main {
         }
     }
 
-    public JSONObject read(){
+    public JSONObject read() {
         List<Sms> smsAr = new ArrayList<>();
         JSONObject resultJson = new JSONObject();
         Factory factory = Factory.getInstance();
@@ -170,24 +155,18 @@ public class Main {
             e.printStackTrace();
         }
 
-        for (Sms s: smsAr) {
+        for (Sms s : smsAr) {
             names.add(s.getName());
-        }
-        for (Sms s : smsAr) {
             numbers.add(s.getNumber());
-        }
-        for (Sms s: smsAr) {
             emails.add(s.getEmail());
-        }
-        for (Sms s : smsAr) {
             smses.add(s.getSms());
         }
 
-        resultJson.put("count",names.size());
-        resultJson.put("name",names);
-        resultJson.put("number",numbers);
-        resultJson.put("email",emails);
-        resultJson.put("sms",smses);
+        resultJson.put("count", names.size());
+        resultJson.put("name", names);
+        resultJson.put("number", numbers);
+        resultJson.put("email", emails);
+        resultJson.put("sms", smses);
 
         System.out.println(resultJson);
         return resultJson;
@@ -205,7 +184,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        for (Sms s: smsAr){
+        for (Sms s : smsAr) {
             try {
                 smsDao.deleteSms(s);
             } catch (SQLException e) {
