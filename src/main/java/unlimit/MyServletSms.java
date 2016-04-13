@@ -30,7 +30,6 @@ public class MyServletSms extends HttpServlet {
         sms = request.getParameter("sms");
 
 
-
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -38,8 +37,6 @@ public class MyServletSms extends HttpServlet {
         out.close();
 
         Main.sms();
-
-
 
 
     }

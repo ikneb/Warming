@@ -20,21 +20,21 @@ function calcPrice() {
                 $('#myModal').modal('show');
                 throw "stop";
             }
-            if (thick==5||thick==10){
+            if (thick == 5 || thick == 10) {
                 console.log("ok")
-            }else{
+            } else {
                 $('#price').html('Толщина 5 или 10');
                 $('#myModal').modal('show');
                 throw "stop";
             }
-            if(density==25||density==35){
+            if (density == 25 || density == 35) {
                 console.log("ok")
-            }else{
+            } else {
                 $('#price').html('Плотность 25 или 35');
                 $('#myModal').modal('show');
                 throw "stop";
             }
-                break;
+            break;
 
         case "expanded_polystyrene":
             if (name == 0 || number == 0 || quad == 0 || thick == 0) {
@@ -42,11 +42,11 @@ function calcPrice() {
                 $('#myModal').modal('show');
                 throw "stop";
             }
-            if(density==0)density=1;
+            if (density == 0)density = 1;
 
-            if (thick==5||thick==10||thick==3){
+            if (thick == 5 || thick == 10 || thick == 3) {
                 console.log("ok")
-            }else{
+            } else {
                 $('#price').html('Толщина 3, 5 или 10');
                 $('#myModal').modal('show');
                 throw "stop";
@@ -54,15 +54,15 @@ function calcPrice() {
             break;
 
         case "mineral_wool":
-            if (name == 0 || number == 0 || quad == 0 || thick == 0 ) {
+            if (name == 0 || number == 0 || quad == 0 || thick == 0) {
                 $('#price').html('Заполните пожалуйчта пустое поле');
                 $('#myModal').modal('show');
                 throw "stop";
             }
-            if(density==0)density=1;
-            if (thick==5||thick==10){
+            if (density == 0)density = 1;
+            if (thick == 5 || thick == 10) {
                 console.log("ok")
-            }else{
+            } else {
                 $('#price').html('Толщина 5 или 10');
                 $('#myModal').modal('show');
                 throw "stop";
