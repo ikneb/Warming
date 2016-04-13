@@ -61,24 +61,25 @@ public class Main {
 
         //выщитываем стоимость
         thick = MyServlet.material;
+        depth = MyServlet.thick;
+        quadrature = MyServlet.quad;
 
-        if (thick.equals("styrofoam")) {
-            int density = MyServlet.density;                           //плотность
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            Styrofoam styrofoam = new Styrofoam();
-            result = styrofoam.price(quadrature, depth, density);
-        } else if (thick.equals("expanded_polystyrene")) {
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
-            result = extrudedPolystyrene.price(quadrature, depth);
-        } else if (thick.equals("mineral_wool")) {
-            depth = MyServlet.thick;
-            quadrature = MyServlet.quad;
-            MineralWool mineralWool = new MineralWool();
-            result = mineralWool.price(quadrature, depth);
-        }
+        switch (thick) {
+            case "styrofoam":
+                int density = MyServlet.density;                           //плотность
+                Styrofoam styrofoam = new Styrofoam();
+                result = styrofoam.price(quadrature, depth, density);
+                break;
+            case "expanded_polystyrene":
+                ExtrudedPolystyrene extrudedPolystyrene = new ExtrudedPolystyrene();
+                result = extrudedPolystyrene.price(quadrature, depth);
+                break;
+            case "mineral_wool":
+                MineralWool mineralWool = new MineralWool();
+                result = mineralWool.price(quadrature, depth);
+                break;
+            }
+
         return result;
     }
 
@@ -104,24 +105,11 @@ public class Main {
 
         for (Customer customer : customers) {
             names.add(customer.getName());
-        }
-        for (Customer customer : customers) {
             numbers.add(customer.getNumber());
-        }
-        for (Customer customer : customers) {
             quads.add(customer.getQuad());
-        }
-        for (Customer customer : customers) {
             thicks.add(customer.getThick());
-        }
-        for (Customer customer : customers) {
             materials.add(customer.getMaterial());
-        }
-        for (Customer customer : customers) {
             densities.add(customer.getDensity());
-        }
-
- for (Customer customer : customers) {
             prices.add(customer.getPrice());
         }
         resultJson.put("count",names.size());
@@ -172,14 +160,8 @@ public class Main {
 
         for (Sms s: smsAr) {
             names.add(s.getName());
-        }
-        for (Sms s : smsAr) {
             numbers.add(s.getNumber());
-        }
-        for (Sms s: smsAr) {
             emails.add(s.getEmail());
-        }
-        for (Sms s : smsAr) {
             smses.add(s.getSms());
         }
 
