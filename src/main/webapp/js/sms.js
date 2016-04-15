@@ -10,7 +10,7 @@ function smska() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8080/MyServletSms',
+            url: 'http://warming.herokuapp.com/MyServletSms',
             dataType: "json",
             data: {
                 name: name,
@@ -47,7 +47,7 @@ function readSms() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8080/MyServletRead',
+            url: 'http://warming.herokuapp.com/MyServletRead',
             dataType: "json",
             data: {
 
@@ -76,7 +76,7 @@ function deleteSms() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:8080/MyServletDelete',
+            url: 'http://warming.herokuapp.com/MyServletDelete',
             dataType: "json",
             data: {
 
