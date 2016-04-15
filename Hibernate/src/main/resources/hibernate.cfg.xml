@@ -19,4 +19,3 @@
     </session-factory>
 </hibernate-configuration>
 
-        mysql://b403fe282f5f04:fbdcddf8@eu-cdbr-west-01.cleardb.com/heroku_9649e699d32c00e?reconnect=true
