@@ -7,11 +7,5 @@
       <schema-pattern>mydbtest.*</schema-pattern>
       <default-schemas>mydbtest.*</default-schemas>
     </data-source>
-    <data-source name="MySQL - heroku_9649e699d32c00e@eu-cdbr-west-01.cleardb.com" uuid="81556acf-99a8-4933-9060-3b6d9f639445">
-      <secret-storage>master_key</secret-storage>
-      <user-name>b403fe282f5f04</user-name>
-      <schema-pattern>heroku_9649e699d32c00e.*</schema-pattern>
-      <default-schemas>heroku_9649e699d32c00e.*</default-schemas>
-    </data-source>
   </component>
 </project>
