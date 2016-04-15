@@ -19,17 +19,7 @@ public class Main {
     double price;
 
     public void recordDB() {
-       /* int warmQuantity;
-        int glueQuantity;
-        int puttiQuantity;
-        int gridQuantity;
-        int paintQuantity;
 
-        warmQuantity = QuantityMaterial.warmQuantity(MyServlet.material, MyServlet.quad);
-        glueQuantity = QuantityMaterial.glueQuantity(MyServlet.quad);
-        puttiQuantity = QuantityMaterial.puttiQuantity(MyServlet.quad);
-        gridQuantity = QuantityMaterial.qridQuantity(MyServlet.quad);
-        paintQuantity = QuantityMaterial.paintQuantity(MyServlet.quad);*/
 
         Factory factory = Factory.getInstance();
         CustomerDao customerDao = factory.getCustomerDao();
