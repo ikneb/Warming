@@ -107,7 +107,7 @@ function passwordClic() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://http://warming.herokuapp.com/MyServletPassword',
+            url: 'http://warming.herokuapp.com/MyServletPassword',
             dataType: "json",
             data: {
                 password: password
@@ -146,7 +146,7 @@ function allall() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://http://warming.herokuapp.com/MyServletAll',
+            url: 'http://warming.herokuapp.com/MyServletAll',
             dataType: "json",
             data: {},
 
