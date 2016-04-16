@@ -8,7 +8,7 @@ function smska() {
     var number = document.getElementById("number").value;
     var sms = document.getElementById("sms").value;
     function respoajax(callback) {
-        $.ajax({
+        jQuery.ajax({
             type: 'GET',
             url: 'http://warming.herokuapp.com/MyServletSms',
             dataType: "json",
@@ -32,7 +32,7 @@ function smska() {
 
 
     respoajax( function allhtml() {
-        $('#myM').modal('show');
+        jQuery('#myM').modal('show');
     });
 
 };
@@ -45,7 +45,7 @@ function smska() {
 function readSms() {
     var sht;
     function respoajax(callback) {
-        $.ajax({
+        jQuery.ajax({
             type: 'GET',
             url: 'http://warming.herokuapp.com/MyServletRead',
             dataType: "json",
@@ -66,7 +66,7 @@ function readSms() {
     respoajax(function allhtml() {
         for (var i = 0; i < sht.count; i++) {
             var row = "<tr ><td>" + sht.name[i] + "</td><td>" + sht.email[i] + "</td><td>" + sht.number[i] + "</td><td>" + sht.sms[i] + "</td></tr>";
-            $('#bodySms').append(row);
+            jQuery('#bodySms').append(row);
         }
     });
 };
@@ -74,7 +74,7 @@ function readSms() {
 function deleteSms() {
     var sht;
     function respoajax(callback) {
-        $.ajax({
+        jQuery.ajax({
             type: 'GET',
             url: 'http://warming.herokuapp.com/MyServletDelete',
             dataType: "json",
@@ -93,8 +93,8 @@ function deleteSms() {
 
     };
     respoajax(function allhtml() {
-        $('#bodySms').html('');
-        $('#myDelete').modal('show');
+        jQuery('#bodySms').html('');
+        jQuery('#myDelete').modal('show');
     });
 };
 
