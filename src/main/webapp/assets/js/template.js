@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-	jQuery(".headroom").headroom({
+	$(".headroom").headroom({
 		"tolerance": 20,
 		"offset": 50,
 		"classes": {
