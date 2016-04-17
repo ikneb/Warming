@@ -74,7 +74,7 @@ function calcPrice() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://warming.herokuapp.com/MyServlet',
+            url: '//warming.herokuapp.com/MyServlet',
             dataType: "json",
             data: {
                 name: name,
@@ -107,7 +107,7 @@ function passwordClic() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://warming.herokuapp.com/MyServletPassword',
+            url: '//warming.herokuapp.com/MyServletPassword',
             dataType: "json",
             data: {
                 password: password
@@ -146,7 +146,7 @@ function allall() {
     function respoajax(callback) {
         $.ajax({
             type: 'GET',
-            url: 'http://warming.herokuapp.com/MyServletAll',
+            url: '//warming.herokuapp.com/MyServletAll',
             dataType: "json",
             data: {},
 
