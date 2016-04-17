@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet("/MyServlet")
+@WebServlet("/unlimit/MyServlet")
 public class MyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public static String name;
